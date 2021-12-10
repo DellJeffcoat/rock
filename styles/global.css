@@ -1,20 +1,25 @@
 
 :root {
-    --primary-background: #FFFFF4;
-    --chrome-background: #e3b574;
-    --chrome-background-opaque: #e3b574d1;
-    --secondary-background: #C9B39B;
-    --text-color: #32363F;
+    --primary-background: #080808;
+    --chrome-background: #0c0906;
+    --chrome-background-opaque: #0f0b1dd1;
+    --secondary-background: #f3f2f1;
+    --text-color: hsla(210, 11%, 96%, 0.685);
     --accent-light: #ED8F11;
-    --accent-dark: #C27A18;
+    --accent-dark: #110b01;
     
     --gutter: 30px;
 }
 
 body {
     /* style */
-    font-family: 'Titillium Web', sans-serif;
-    background-color: var(--primary-background);
+    background-image: url(https://cdn.theatlantic.com/thumbor/OOkUufd7c49bmOgbK9jXwgvGqz4=/0x190:3420x2114/720x405/media/img/mt/2015/12/RTR1J9GG/original.jpg);
+    background-size: cover;
+    font-family:'Cambria';
+    font: size 80px; 
+    align-content: center;
+    
+    
     color: var(--text-color);
 
     /* layout */
@@ -29,14 +34,19 @@ header {
     display: flex;
     justify-content: flex-start;
     background-color: var(--chrome-background);
-    box-shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+    box-shadow: 10px 10px 20px -12px rgba(240, 236, 236, 0.45);
     padding: 0 var(--gutter);
 }
 
 main {
     overflow-y: auto;
 }
+ img{
+     
+     height: 200px;
+     width:200px;
 
+ }
 
 footer {
     background-color: var(--chrome-background-opaque);

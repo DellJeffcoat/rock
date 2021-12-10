@@ -1,13 +1,41 @@
-// import functions
-import { add} from './calc.js';
+import { score, generateThrow } from './test/game.js';
+// Import functions
+const rockButton = document.getElementById('rock');
+const results = document.getElementById('results');
 
-// grab DOM elements
-const numInput1 = document.getElementById('num-input1');
-const numInput2 = document.getElementById('num-Input2');
+const scissorsButton = document.getElementById('scissors');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+
+const paperButton = document.getElementById('paper');
+const audio = document.getElementById('sound');
+// Grab all elements by ID
+rockButton.addEventListener('click', () =>{ 
+    const computer = generateThrow();
+    const player = rockButton.id;
+    const newResults = score(player, computer);
+    results.textContent = newResults; 
+    audio.src = 'assets/rocks.wav';
+    audio.play();
+}); 
+scissorsButton.addEventListener('click', () =>{ 
+    const computer = generateThrow();
+    const player = scissorsButton.id;
+    const newResults = score(player, computer);
+    results.textContent = newResults;
+    audio.src = 'assets/scissors.wav';
+    audio.play();
+});
+paperButton.addEventListener('click', () =>{ 
+    const computer = generateThrow();
+    const player = scissorsButton.id;
+    const newResults = score(player, computer);
+    results.textContent = newResults;
+    audio.src = 'assets/paper.mp3';
+    audio.play();
+});
+// Set eventLister to all buttons
+// Display results on screen
+
+
 
 

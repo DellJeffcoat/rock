@@ -1,9 +1,9 @@
 export function score(player1, player2) {
     if (player1 === 'rock' && player2 === 'rock') 
         return 'tie';
-        if (player1 === 'scissors' && player2 === 'scissors') 
+    if (player1 === 'scissors' && player2 === 'scissors') 
         return 'tie';
-        if (player1 === 'paper' && player2 === 'paper') 
+    if (player1 === 'paper' && player2 === 'paper') 
         return 'tie';
     if (player1 === 'scissors' && player2 === 'rock') 
         return 'player2';
@@ -26,9 +26,15 @@ export function score(player1, player2) {
     if (player1 === 'paper' && player2 === 'rock')
         return 'player1';
 }
+const throws = ['rock', 'paper', 'scissors'];
 
-const throws = ['rock, paper, scissors'];
+export function generateThrow() {
+    const index = getRandomIntInclusive(0, 2);
+    return throws[index];
+}
 
-console.log(throws[0]);
-console.log(throws[1]);
-console.log(throws[2]);
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
